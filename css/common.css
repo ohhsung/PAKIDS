@@ -5,7 +5,9 @@
     height: 120px;
 
     position: fixed;
-    white-space: nowrap;
+    top: 0;
+    left: 0;
+
     z-index: 999999;
 
     display: flex;
@@ -16,8 +18,24 @@
     color: #fff;
 
     padding: 0 72px;
+    white-space: nowrap;
 
     transition: 250ms ease-in-out;
+}
+
+.header.active {
+    background: #fff;
+    color: #222;
+
+}
+
+.header.scroll {
+    top: -120px;
+}
+
+.header.scroll::before,
+.header.scroll .nav .gnb .depth-02 {
+    display: none;
 }
 
 .header:hover {
@@ -130,7 +148,7 @@
     visibility: visible;
 }
 
-.header:hover .nav .gnb .depth-02 > li:hover {
+.header:hover .nav .gnb .depth-02>li:hover {
     color: #F56214;
 }
 
