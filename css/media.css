@@ -1,0 +1,13 @@
+.only-mo {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .only-mo {
+        display: block;
+    }
+
+    .only-pc {
+        display: none;
+    }
+}
