@@ -3,7 +3,7 @@
 @import url('../css/common.css');
 
 .section {
-    background: #F56214;
+    background: #f56214;
 }
 
 .fade-in {
@@ -27,7 +27,7 @@
 }
 
 .main-visual .pakids-logo .txt {
-    fill: #F56214;
+    fill: #f56214;
 }
 
 .main-visual .pakids-logo .combine {
@@ -38,7 +38,6 @@
 
 .section-01 {
     padding-top: 10vw;
-    height: 300vh;
 }
 
 .section-01 .skew-text {
@@ -83,7 +82,7 @@
     margin: 250px auto 0;
 }
 
-.section-01 .intro-img>* {
+.section-01 .intro-img > * {
     position: absolute;
 
     width: 100%;
@@ -93,7 +92,7 @@
     transition: 0.6s ease-out;
 }
 
-.section-01 .intro-img>.kid {
+.section-01 .intro-img > .kid {
     transition: 0.4s ease-out;
 
     z-index: 2;
@@ -101,9 +100,114 @@
 
 .section-01 .intro-img .line-1 {
     z-index: 3;
-
 }
 
 .section-01 .intro-img .line-2 {
     z-index: 1;
+}
+
+/* ---------- 섹션 2 ---------- */
+
+.section-02 {
+    position: relative;
+
+    width: 100%;
+    height: 100vh;
+
+    background: #f56214;
+}
+
+.section-02 .inner {
+    background: #000;
+}
+
+.bk-box {
+    position: absolute;
+
+    top: -350px;
+
+    width: 100%;
+    height: 300vh;
+
+    background: #000;
+
+    z-index: 5;
+
+    transition: 0.5s;
+}
+
+.skew {
+    transform: rotate(-10deg) skew(-10deg, 0deg) scale(1.01543, 0.98481);
+}
+
+.section-02.active .bk-box {
+    top: -1000px;
+}
+
+.section-02 .inner::before {
+    content: '';
+
+    position: absolute;
+    top: -300px;
+    left: 0;
+    z-index: 10;
+
+    height: 0;
+
+    border-bottom: 163px solid;
+    border-left: 895px solid rgba(0, 0, 0, 0);
+
+    background: #f56214;
+
+    opacity: 0;
+    visibility: hidden;
+}
+
+.section-02 .inner::after {
+    content: '';
+
+    position: absolute;
+    bottom: -300px;
+    right: 0;
+    z-index: 10;
+
+    height: 0;
+
+    border-bottom: 163px solid;
+    border-left: 895px solid rgba(0, 0, 0, 0);
+
+    background: #f56214;
+
+    transform: rotate(-180deg);
+
+    opacity: 0;
+    visibility: hidden;
+}
+
+.section-02.active .inner {
+    /* position: fixed; */
+    top: 0;
+    left: 0;
+}
+
+.section-02.active .inner::after {
+    position: fixed;
+    bottom: 0;
+
+    opacity: 1;
+    visibility: visible;
+
+    transition: 0.5s;
+    transition-delay: 0.2s;
+}
+
+.section-02.active .inner::before {
+    position: fixed;
+    top: 0;
+
+    opacity: 1;
+    visibility: visible;
+
+    transition: 0.5s;
+    transition-delay: 0.2s;
 }
